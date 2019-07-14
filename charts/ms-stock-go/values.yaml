@@ -7,8 +7,8 @@ image:
   tag: 0.1.0
   pullPolicy: Always
 
-nameOverride: "ms-stock-query-go"
-fullnameOverride: "ms-stock-query-go"
+nameOverride: "ms-stock-go"
+fullnameOverride: "ms-stock-go"
 
 deployment:
   containerPort: 8080
@@ -21,7 +21,7 @@ service:
 
 kymaGateway:
   enabled: true
-  hostname: ms-stock-query-go
+  hostname: ms-stock-go
 
 eventing:
   enabled: false

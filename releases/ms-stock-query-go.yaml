@@ -2,13 +2,13 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: ms-stock-query-go
+  name: ms-stock-go
   namespace: demo
   annotations:
     flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:1.21.*
 spec:
-  releaseName: ms-stock-query-go
+  releaseName: ms-stock-go
   chart:
     git: ssh://git@github.com/phoenix086/flux-get-started.git
     ref: master
