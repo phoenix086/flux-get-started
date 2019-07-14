@@ -28,7 +28,19 @@ eventing:
 
 ingress:
   enabled: true
+  annotations: {}
+  path: /
+  hosts:
+    - chart-example.local
+  tls: []
 
 resources:
    requests:
     cpu: 200m
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
