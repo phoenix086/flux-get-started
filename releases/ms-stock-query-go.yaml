@@ -1,0 +1,18 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: ms-stock-query-go
+  namespace: demo
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:1.21.*
+spec:
+  releaseName: ms-stock-query-go
+  chart:
+    git: ssh://git@github.com/phoenix086/flux-get-started.git
+    ref: master
+    path: charts/ms-stock-go
+  values:
+    image: gcr.io/xxxl-services/ms-stock-query-go:0.1.0
+    serviceType: ClusterIP

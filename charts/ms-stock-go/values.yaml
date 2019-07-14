@@ -1,0 +1,34 @@
+replicaCount: 1
+istio:
+  enabled: true
+
+image:
+  repository: gcr.io/xxxl-services/ms-stock-query-go
+  tag: 0.1.0
+  pullPolicy: Always
+
+nameOverride: "ms-stock-query-go"
+fullnameOverride: "ms-stock-query-go"
+
+deployment:
+  containerPort: 8080
+  readinessProbe: /actuator/health
+  livenessProbe: /actuator/health
+
+service:
+  type: ClusterIP
+  port: 8080
+
+kymaGateway:
+  enabled: true
+  hostname: ms-stock-query-go
+
+eventing:
+  enabled: false
+
+ingress:
+  enabled: true
+
+resources:
+   requests:
+    cpu: 200m
