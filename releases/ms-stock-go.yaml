@@ -5,7 +5,7 @@ metadata:
   name: ms-stock-go
   namespace: demo
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:0.1.*
 spec:
   releaseName: ms-stock-go
@@ -14,5 +14,5 @@ spec:
     ref: master
     path: charts/ms-stock-go
   values:
-    image: gcr.io/xxxl-services/ms-stock-query-go:0.1.1
+    image: gcr.io/xxxl-services/ms-stock-query-go:0.1.0
     serviceType: ClusterIP
