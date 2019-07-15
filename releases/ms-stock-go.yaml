@@ -14,5 +14,5 @@ spec:
     ref: master
     path: charts/ms-stock-go
   values:
-    image: gcr.io/xxxl-services/ms-stock-query-go:0.1.0
+    image: gcr.io/xxxl-services/ms-stock-query-go:0.1.1
     serviceType: ClusterIP
