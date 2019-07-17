@@ -1,0 +1,41 @@
+replicaCount: 1
+istio:
+  enabled: true
+
+image: gcr.io/xxxl-services/ms-go-helloworld:0.1.0
+
+nameOverride: "ms-go-helloworld-weave"
+fullnameOverride: "ms-stock-go-weave"
+
+deployment:
+  containerPort: 8080
+
+service:
+  type: ClusterIP
+  port: 8080
+
+kymaGateway:
+  enabled: true
+  hostname: ms-go-helloworld-weave
+
+eventing:
+  enabled: false
+
+ingress:
+  enabled: true
+  annotations: {}
+  path: /
+  hosts:
+    - chart-example.local
+  tls: []
+
+resources:
+   requests:
+    cpu: 200m
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
