@@ -29,14 +29,6 @@ spec:
             - name: http
               containerPort: {{ .Values.deployment.containerPort }}
               protocol: TCP
-#          livenessProbe:
-#            httpGet:
-#              path: {{ .Values.deployment.livenessProbe}}
-#              port: http
-#          readinessProbe:
-#            httpGet:
-#              path: {{ .Values.deployment.readinessProbe}}
-#              port: http
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
