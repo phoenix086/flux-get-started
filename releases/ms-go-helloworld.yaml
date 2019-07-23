@@ -2,19 +2,19 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: ms-go-helloworld
+  name: ms-go-helloworld-weave
   namespace: playground
   annotations:
     # automatic updates
     flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:0.1.*
 spec:
-  releaseName: ms-stock-go
+  releaseName: ms-go-helloworld-weave
   chart:
     git: ssh://git@github.com/phoenix086/flux-get-started.git
     ref: master
     path: charts/ms-go-helloworld
   values:
     # fixed releases
-    image: gcr.io/xxxl-services/ms-go-helloworld:0.1.0
+    image: gcr.io/xxxl-services/ms-go-helloworld:0.2.0
     serviceType: ClusterIP
