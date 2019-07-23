@@ -2,7 +2,7 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: ms-stock-go
+  name: ms-go-helloworld
   namespace: playground
   annotations:
     # automatic updates
@@ -13,7 +13,7 @@ spec:
   chart:
     git: ssh://git@github.com/phoenix086/flux-get-started.git
     ref: master
-    path: charts/ms-stock-go
+    path: charts/ms-go-helloworld
   values:
     # fixed releases
     image: gcr.io/xxxl-services/ms-go-helloworld:0.1.0
